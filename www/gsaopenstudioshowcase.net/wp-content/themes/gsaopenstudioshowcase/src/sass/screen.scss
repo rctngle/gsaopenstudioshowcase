@@ -1,0 +1,103 @@
+@import "reset-css";
+
+$breakpoints: (
+	'xsm': 767px,
+	'sm': 1024px,
+	'md': 1280px,
+	'lg': 1440px
+) !default;
+
+@mixin breakpoint($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media (min-width: map-get($breakpoints, $breakpoint)) {
+			@content;
+		}
+	}
+}
+
+html {
+	height: 100%;
+	box-sizing: border-box;
+	font-weight: 16px;
+	--offset: 30px;
+	@include breakpoint(xsm){
+		--offset: 40px;		
+	}
+	@include breakpoint(md){
+		--offset: 60px;	
+	}
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+@import "typography";
+
+
+$mobile-nav-height: 54px;
+$border-width: 2px;
+$bg-color: #e2e2e2;
+
+@import "header-nav";
+@import "student";
+@import "intro";
+
+
+body {
+	height: 100%;
+	font-family: 'General-Grotesque-Web', sans-serif;
+	margin: 0;
+	line-height: 1.3;
+	letter-spacing: 0.03em;
+	display: flex;
+	flex-flow: column nowrap;	
+	overflow-x: hidden;
+	padding-top: $mobile-nav-height;
+	@include breakpoint(xsm){
+		padding-top: 0;
+	}
+
+	background: $bg-color;
+	@each $breakpoint in $breakpoints {
+		@include breakpoint($breakpoint){
+			&::before {
+				position: absolute;
+				color: transparent;
+				content: quote($breakpoint);
+			}
+		}
+	}
+
+	&.home {
+		display: block;
+		main {
+			background: transparent;
+		}
+	}
+}
+main {
+	flex-grow: 1;
+	position: relative;
+	background: #fff;
+}
+section {
+	max-width: 2200px;
+	margin: 0 auto;
+}
+
+
+.oembed-container {
+	position: relative; 
+	padding-bottom: 56.25%;
+	height: 0; 
+	overflow: hidden;
+	width: 100%;
+}
+.oembed-container iframe, .oembed-container object, .oembed-container embed, .oembed-container video {
+	position: absolute; 
+	top: 0;
+	left: 0;
+	width: 100%; 
+	height: 100%;
+}

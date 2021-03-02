@@ -1,0 +1,46 @@
+# docker-compose -p gsaopenstudioshowcase up
+
+version: "3.2"
+services:
+  fpm:
+    build:
+      context: ./fpm
+    env_file:
+      - ./fpm/vars.env
+    volumes:
+      - ../www/:/usr/local/apache2/htdocs/    
+      - ./fpm/conf/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      - ./nginx-conf:/etc/nginx/conf.d
+  apache:
+    build:
+      context: './apache/'
+    depends_on:
+      - fpm
+      - db
+    ports:
+      - "80:80"
+    volumes:
+      - ../www/:/usr/local/apache2/htdocs/
+      - ./apache/conf/httpd.conf:/usr/local/apache2/conf/httpd.conf
+      - ./apache/conf/extra/httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
+
+  db:
+    image: mariadb:10.5.3
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: gsaopenstudioshowcase
+      MYSQL_USER: gsaopenstudioshowcase
+      MYSQL_PASSWORD: gsaopenstudioshowcase
+    command:
+      - "--character-set-server=utf8mb4"
+      - "--collation-server=utf8mb4_unicode_ci"
+    ports:
+      - "3306:3306"
+    volumes:
+      - gsaopenstudioshowcase_db_data:/var/lib/mysql
+      - ./database:/docker-entrypoint-initdb.d
+      - ./mariadb/conf:/etc/mysql/mariadb.conf.d
+
+
+volumes:
+    gsaopenstudioshowcase_db_data:

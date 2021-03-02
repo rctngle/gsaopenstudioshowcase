@@ -1,0 +1,80 @@
+body.home header {
+
+	.introduction {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
+header {
+	position: relative;
+	z-index: 5;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	padding: 0;
+	background: $bg-color;
+	height: $mobile-nav-height;
+	display: flex;
+	padding: 10px 15px;
+	align-items: baseline;
+	justify-content: space-between;
+
+	@include breakpoint(xsm){
+		height: auto;
+		position: relative;
+		flex-flow: row nowrap;
+		padding: 12px 20px 20px 20px;	
+	}
+	@include breakpoint(sm){
+		padding: 16px 20px 20px 20px;		
+	}	
+	@include breakpoint(md){		
+		padding: 25px 30px 30px 30px;	
+	}
+
+	.desktop {
+		display: none;
+		@include breakpoint(xsm){
+			display: inline;
+		}
+
+	}
+	.mobile {
+		display: block;
+		@include breakpoint(xsm){
+			display: none;
+		}
+	}
+	img {
+		width: 55px;
+		margin-right: 0;
+		@include breakpoint(xsm){
+			width: 120px;
+			margin-right: 25px;
+		}
+		display: block;
+	}
+	h2 {
+		
+		line-height: 1;
+		@include breakpoint(xsm){
+			flex-grow: 1;	
+		}
+		
+		
+	}
+	.introduction {
+		opacity: 0;
+		pointer-events: none;
+	}
+	.introduction a {
+		border-bottom: 2px solid #000;
+	}
+
+	
+}
+
+
+

@@ -1,0 +1,76 @@
+@mixin underline($background: #fff, $text: darkblue, $selection: #ffc, $position: 86%){
+	text-decoration: none;
+	background: linear-gradient($background, $background), linear-gradient($background, $background), linear-gradient($text, $text);
+	background-size: .05em 2px, .05em 2px, 2px 2px;
+	background-repeat: no-repeat, no-repeat, repeat-x;
+	text-shadow: 0.03em 0 $background, -0.03em 0 $background, 0 0.03em $background, 0 -0.03em $background, 0.06em 0 $background, -0.06em 0 $background, 0.09em 0 $background, -0.09em 0 $background, 0.12em 0 $background, -0.12em 0 $background, 0.15em 0 $background, -0.15em 0 $background;
+	background-position-y: $position, $position, $position;
+	background-position-x: 0%, 100%, 0%;
+
+	&::selection {
+		//text-shadow: 0.03em 0 $selection, -0.03em 0 $selection, 0 0.03em $selection, 0 -0.03em $selection, 0.06em 0 $selection, -0.06em 0 $selection, 0.09em 0 $selection, -0.09em 0 $selection, 0.12em 0 $selection, -0.12em 0 $selection, 0.15em 0 $selection, -0.15em 0 $selection;
+		text-shadow: none;
+	}
+	&:before, &:after, *, *:before, *:after {
+		text-shadow: none;
+	}
+}
+
+a:link, a:visited {
+	color: currentColor;
+	text-decoration: none;
+}
+
+
+
+strong {
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: 'Atlas-Typewriter-Web';
+	src: url('../fonts/AtlasTypewriter-Regular-Web.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Cambon-Web';
+	src: url('../fonts/Cambon-Demi.woff') format('woff');
+}
+
+@font-face {
+	font-weight: 700;
+	font-family: 'General-Grotesque-Web';
+	src: url('../fonts/GeneralGrotesque-ExtraBold.woff') format('woff');
+}
+
+@font-face {
+	font-weight: 400;
+	font-family: 'General-Grotesque-Web';
+	src: url('../fonts/GeneralGrotesque-Book.woff') format('woff');
+}
+
+@font-face {
+	font-weight: 400;
+	font-family: 'General-Grotesque-Web';
+	font-style: italic;
+	src: url('../fonts/GeneralGrotesque-BookItalic.woff') format('woff');
+}
+
+
+
+h2 {
+	font-family: 'Cambon-Web';	
+	font-size: 28px;
+	@include breakpoint(xsm){
+		font-size: 34px;
+	}
+	@include breakpoint(sm){
+		font-size: 48px;
+	}
+}
+
+
+
+em, i:not(.fa) {
+	font-style: italic;
+}

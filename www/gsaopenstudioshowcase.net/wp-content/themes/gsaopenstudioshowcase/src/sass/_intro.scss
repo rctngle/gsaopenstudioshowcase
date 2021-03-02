@@ -1,0 +1,81 @@
+main.intro-open {
+	section#intro {
+		display: block;
+	}
+}
+
+section#intro {
+	display: none;
+	background-color: #fff;
+	padding: 15px 0;
+	margin-bottom: 30px;
+	@include breakpoint(xsm){
+		padding: 30px 0;
+	}
+	> div {
+		padding: 10px 15px 10px 15px;
+		@include breakpoint(xsm){
+			padding: 0 30px 10px 30px;
+		}
+		
+		grid-template-columns: 2fr 1fr;
+		grid-gap: 30px;
+		@include breakpoint(sm){
+			display: grid;	
+		}
+		@include breakpoint(md){
+			grid-gap: 60px;
+		}
+		.prose {
+			//column-count: 2;	
+			
+			p {
+
+				@include breakpoint(xsm){
+					font-size: 19px;		
+				}
+				
+			}		
+		}
+		em {
+			padding: 0;
+			@include breakpoint(xsm){
+				padding-left: 2rem;				
+			}
+			
+		}
+		a:link {
+			border-bottom: 2px solid #000;
+		}
+		p {
+			margin-bottom: 1rem;
+		}
+	}
+	.cite {
+		margin-bottom: 0;
+
+	}
+	.course-introduction {
+		font-size: 14px;
+		margin-top: 3rem;
+		@include breakpoint(sm){
+			margin-top: 0;
+		}
+		display: block;
+		@include breakpoint(xsm){
+			display: flex;
+		}
+		@include breakpoint(sm){
+			flex-flow: column nowrap;
+			justify-content: space-between;
+		}
+		.close {
+			flex: 0 0 25%;
+			text-align: right;
+			@include breakpoint(sm){
+				flex: none;
+				align-self: flex-end;
+			}
+		}
+	}
+}
