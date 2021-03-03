@@ -7,6 +7,8 @@ $classes = get_body_class();
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+
 	<title>GSA Open Studio Showcase</title>
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/build/styles/screen.css?t=<?php echo time(); ?>" />
 	<script src="<?php bloginfo('template_directory');?>/build/scripts/scripts.js?t=<?php echo time(); ?>" /></script>
@@ -53,3 +55,15 @@ $classes = get_body_class();
 		
 	
 </header>
+
+<section id="intro">
+	<article class="intro">
+		<div class="intro-header">
+			<div class="desktop"><a href="<?php echo site_url(); ?>"><img src="<?php bloginfo('template_directory');?>/media/gsa-logo-black.svg"></a></div>
+			<p>Open Studio &mdash; Portfolio Preparation Course,<br/> Creative Practices 2020–2021</p>
+		</div>	
+		<h2><a href="<?php echo site_url();?>">We Lost You For A Moment There</a></h2>
+		<p class="essay">It gives us great pleasure to share the work of this year’s students who have studied with us on our Portfolio Preparation Course - Creative Practices. All have shown a prodigious amount of dedication to their studies during very challenging times and have embraced working online with us, establishing remote working spaces, with continued enthusiasm and commitment. They have all been remarkably abundant in their making and created portfolios of work that are diverse and engrossing; whilst supporting each other in their learning, being extraordinarily good natured and kind throughout.</p>
+		<p class="essay"><a href=""><span>Continue Reading</span> &rarr;</a></p>
+	</article>
+</section>

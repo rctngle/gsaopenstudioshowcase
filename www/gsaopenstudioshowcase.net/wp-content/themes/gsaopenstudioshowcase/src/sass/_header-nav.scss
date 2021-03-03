@@ -20,7 +20,7 @@ header {
 	padding: 10px 15px;
 	align-items: baseline;
 	justify-content: space-between;
-
+	display: none;
 	@include breakpoint(xsm){
 		height: auto;
 		position: relative;

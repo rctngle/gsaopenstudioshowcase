@@ -12,6 +12,7 @@ body:not(.single-post) {
 			hyphens: auto;
 		}
 	}
+	
 }
 
 hr {
@@ -20,19 +21,40 @@ hr {
 	border-bottom: 1px solid #000;
 }
 
-.single article {
+
+article {
+	//border: 1px solid #000;
+	flex: 0 1 calc(50% - 15px);
+	@include breakpoint(md){
+		flex: 0 1 calc(50% - 20px);		
+	}
+}
+
+.single-post {
+	article.intro {
+		p.essay {
+			display: none;
+		}
+	}
+}
+
+.single main article {
 	display: flex;
 	background: #FFF;
 	padding: 15px;
 	height: 100%;
-
+	max-width: 1700px;
+	margin: 0 auto;
 	flex-flow: column nowrap;
+	padding: var(--padding);
+	a:link {
+
+
+	}
 	@include breakpoint(xsm){
-		padding: 20px;
 	}
 	@include breakpoint(sm){
 		justify-content: space-between;
-		padding: 30px;
 		flex-flow: row nowrap;
 	}
 	.summary p, h5 {
@@ -42,24 +64,45 @@ hr {
 		}
 	}
 
-	.work {
-		order: 1;
-		flex: 0 1 calc(50% - 15px);
+	.works {
+
+		flex: 0 1 calc(75% - 15px);
 		position: relative;
 		margin-bottom: 1rem;
 		@include breakpoint(sm){
-			order: 2;
+
 			margin-bottom: 0;
 		}
 		iframe {
 			background: #f2f2f2;
 		}
+		.work {
+			width: 100%;
+			position: relative;
+			margin-bottom: 3rem;
+			img {
+				border: 1px solid #ddd;
+				width: 100%;
+				display: block;
+			}
+			.caption {
+				padding-left: var(--padding);
+				margin-top: 1rem;
+
+				@include breakpoint(md){
+					max-width: 50%;					
+				}
+
+			}
+		}
 	}
 	.info {
-		order: 2;
-		flex: 0 1 calc(50% - 15px);
+		position: sticky;
+		align-self: flex-start;
+		top: var(--padding);
+		flex: 0 1 calc(25% - 15px);
 		@include breakpoint(sm){
-			order: 1;
+
 		}
 		.inner {
 			box-shadow: none;
@@ -85,11 +128,7 @@ article {
 		line-height: 1.1;
 		hyphens: none;
 	}
-	h1 {
-		font-size: 20px;
-		margin-bottom: 0;
-		display: none;
-	}
+	
 	p, div, h5 {
 		font-size: 14px;
 		@include breakpoint(xsm){
@@ -105,13 +144,13 @@ article {
 		width: 100%;
 		height: 800px;
 	}
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 	@include breakpoint(xsm){
 		margin-bottom: 0;
 	}
 	position: relative; 
 	.more {
-
+		padding-top: 8px;
 		color: #999;
 		text-align: right;
 		font-style: italic;
@@ -120,72 +159,132 @@ article {
 		margin-bottom: 0;
 	}
 	
-	&:nth-child(even){
-		.work {
-			@include breakpoint(xsm){
-				margin-left: 50%;	
-			}
+	// &:nth-child(even){
+	// 	.work {
+	// 		@include breakpoint(xsm){
+	// 			margin-left: 50%;	
+	// 		}
 			
-		}
-		.info {
-			@include breakpoint(xsm){
-				display: flex;
-				justify-content: flex-end;
-				margin-left: 0px;
-				.inner {
-					left: auto;
-					right: calc(var(--offset) * -1);
-				}
-			}
-		}
-	}
+	// 	}
+	// 	.info {
+	// 		@include breakpoint(xsm){
+	// 			display: flex;
+	// 			justify-content: flex-end;
+	// 			margin-left: 0px;
+	// 			.inner {
+	// 				left: auto;
+	// 				right: calc(var(--offset) * -1);
+	// 			}
+	// 		}
+	// 	}
+	// }
 	
-	.info, .work {
+	// .info, .work {
 		
-		@include breakpoint(xsm){
-			width: 50%;
-		}
-	}
+	// 	@include breakpoint(xsm){
+	// 		width: 50%;
+	// 	}
+	// }
 
 
-	.info {
-		margin: 0;
-		@include breakpoint(xsm){
-			margin-left: 50%;
-			padding: var(--offset) 0;
-		}
+	// .info {
+	// 	margin: 0;
+	// 	@include breakpoint(xsm){
+	// 		margin-left: 50%;
+	// 		padding: var(--offset) 0;
+	// 	}
 		
 
-		.inner {
-			@include breakpoint(xsm){
-				left: calc(var(--offset) * -1);				
-			}
-			max-width: 800px;
+	// 	.inner {
+	// 		@include breakpoint(xsm){
+	// 			left: calc(var(--offset) * -1);				
+	// 		}
+	// 		max-width: 800px;
+	// 		position: relative;
+
+	// 		box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	// 		padding: calc(var(--offset) / 2);
+	// 		background: #FFF;	
+	// 	}
+
+	// }
+	// .work {
+	// 	@include breakpoint(xsm){
+	// 		position: absolute;
+	// 		left: 0;
+	// 		top: 0;
+	// 		bottom: 0;	
+	// 	}
+		
+	// 	overflow: hidden;
+	// 	img {
+
+	// 		width: 100%;
+	// 		height: 100%;
+	// 		object-fit: cover;
+	// 		object-position: center;
+	// 		display: block;
+	// 	}
+	// }
+
+	&:nth-child(even){
+
+		@include breakpoint(sm){
 			position: relative;
-
-			box-shadow: 0 0 10px rgba(0,0,0,0.1);
-			padding: calc(var(--offset) / 2);
-			background: #FFF;	
+			top: -250px;			
 		}
-
 	}
-	.work {
-		@include breakpoint(xsm){
-			position: absolute;
-			left: 0;
-			top: 0;
-			bottom: 0;	
-		}
-		
-		overflow: hidden;
-		img {
+	.info {
 
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			object-position: center;
-			display: block;
+		background-color: #FFF;
+		padding: calc(var(--padding) * 0.8) var(--padding) var(--padding) var(--padding);
+		width: 75%;
+		left: 12.5%;
+		position: relative;
+		top: -25px;
+		@include breakpoint(xsm){
+			top: -10.5%;
 		}
+		box-shadow: 0 0 20px rgba(0,0,0,0.1);
+		z-index: 1;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		h2 {
+			margin: 0;
+		}
+	}
+	.works {
+		height: var(--slide-height);
+		position: relative;
+		.work {
+			overflow: hidden;
+			background-color: #FFF;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			opacity: 0;
+			transition: opacity 500ms;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
 	}
 	
+}
+
+
+
+@for $i from 0 through 40 {
+	.works[data-idx="#{$i}"] {
+		.work:nth-child(#{$i+1}){
+			opacity: 1;
+		}
+		
+	}
 }

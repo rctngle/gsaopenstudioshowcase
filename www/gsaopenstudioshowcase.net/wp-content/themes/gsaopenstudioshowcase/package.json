@@ -28,7 +28,9 @@
     "webpack-cli": "^3.3.11",
     "webpack-livereload-plugin": "^2.3.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "tiny-slider": "^2.9.3"
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions"
