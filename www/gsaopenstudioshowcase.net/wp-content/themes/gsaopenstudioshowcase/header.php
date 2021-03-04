@@ -87,9 +87,10 @@ if (is_singular()) {
 		<p class="essay"><a href=""><span>Continue Reading</span> <img style="width: 18px; position: relative; top: 2px" src="<?php bloginfo('template_directory');?>/media/arrow-right.svg"></a></p>
 	</article>
 	<nav>
-		<?php previous_post_link('%link', '&larr; Previous'); ?>
 
-		<?php next_post_link('%link', 'Next &rarr;'); ?>
-		<?php echo $student_num; ?> / <?php echo $num_students; ?>
+		<?php previous_post_link('%link', '<img src="' . get_stylesheet_directory_uri() .'/media/arrow-left.svg' . '"> Previous'); ?>
+		<span><?php echo $student_num; ?> / <?php echo $num_students; ?></span>
+
+		<?php next_post_link('%link', 'Next <img src="' . get_stylesheet_directory_uri() .'/media/arrow-right.svg' . '">'); ?>
 	</nav>
 </section>
