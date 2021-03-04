@@ -66,4 +66,8 @@ $classes = get_body_class();
 		<p class="essay">It gives us great pleasure to share the work of this year’s students who have studied with us on our Portfolio Preparation Course – Creative Practices. All have shown a prodigious amount of dedication to their studies during very challenging times and have embraced working online with us, establishing remote working spaces, with continued enthusiasm and commitment. They have all been remarkably abundant in their making and created portfolios of work that are diverse and engrossing; whilst supporting each other in their learning, being extraordinarily good natured and kind throughout.</p>
 		<p class="essay"><a href=""><span>Continue Reading</span> &rarr;</a></p>
 	</article>
+	<nav>
+		<?php previous_post_link('%link', 'Previous'); ?>
+		<?php next_post_link('%link', 'Next'); ?>
+	</nav>
 </section>

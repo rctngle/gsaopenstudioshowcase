@@ -55,7 +55,11 @@ $bg-color: #e2e2e2;
 @import "student";
 @import "intro";
 
-
+body.home {
+	nav {
+		display: none;
+	}
+}
 body {
 	height: 100%;
 	font-family: 'General-Grotesque-Web', sans-serif;

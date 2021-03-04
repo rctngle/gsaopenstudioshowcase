@@ -17,17 +17,10 @@ $works = get_field('work');
 	<div class="info">
 		<div class="inner">
 			<h2><?php the_title(); ?></h2>
-		
-
 			<h2><?php the_field('title'); ?></h2>
-			<div class="summary"><?php the_field('summary'); ?></div>
-
-	
-
-
 			<div class="about">
 				<em><?php the_content(); ?></em>
-
+				<p>Contact Information</p>
 				<div>
 					<?php if ($email): ?>						
 						<a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a><br/>
