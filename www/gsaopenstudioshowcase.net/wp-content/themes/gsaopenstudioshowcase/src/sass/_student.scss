@@ -109,10 +109,17 @@ article {
 			.caption {
 				padding-left: var(--padding);
 				margin-top: 1rem;
-
+				display: block;
+				justify-content: space-between;
 				@include breakpoint(md){
-					max-width: 50%;					
+					display: flex;
 				}
+				div.text {
+					
+						flex: 0 1 50%;
+					
+				}
+				
 
 			}
 		}

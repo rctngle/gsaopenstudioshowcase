@@ -31,6 +31,7 @@
 
 				<div class="caption">
 					<?php if($args['page']):?>
+						<div class="text">
 						<?php if ($work['media_image']['title']): ?>
 							<h4><?php echo $work['media_image']['title']; ?></h4>
 						<?php endif; ?>
@@ -38,9 +39,9 @@
 						<?php if ($work['media_image']['caption']): ?>
 							<div><?php echo $work['media_image']['caption']; ?></div>
 						<?php endif; ?>
-						
+						</div>
 						<?php if ($work['url']): ?>
-							<a href="<?php echo $work['url']; ?>" target="_blank">View</a>
+							<div class="link"><a href="<?php echo $work['url']; ?>" target="_blank">View Project &rarr;</a></div>
 						<?php endif; ?>
 					<?php endif;?>
 				</div>
