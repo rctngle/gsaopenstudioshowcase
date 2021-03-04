@@ -35,7 +35,7 @@ $works = get_field('work');
 
 					<?php if ($links && is_array($links) && count($links) > 0): ?>						
 						<?php foreach($links as $link): ?>
-							<a href="<?php echo $link['link']; ?>" target="_blank"><?php echo get_display_website($link['link']); ?></a><br/>
+							<a href="<?php echo $link['link']; ?>" target="_blank"><?php echo get_display_website($link['url']); ?></a><br/>
 						<?php endforeach; ?>						
 					<?php endif; ?>
 				</div>

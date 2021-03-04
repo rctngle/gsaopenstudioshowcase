@@ -50,7 +50,7 @@ function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
 
 function gsa_pre_get_posts( $query ) {
 	if( $query->is_main_query() && ! is_admin() ) {
-		$query->set( 'posts_per_page', 2 );
+		$query->set( 'posts_per_page', -1 );
 		$query->set( 'orderby', 'title' );
 		$query->set( 'order', 'asc' );
 	}
@@ -59,7 +59,17 @@ add_action( 'pre_get_posts', 'gsa_pre_get_posts' );
 
 
 function get_display_website($url) {
+
+
 	$website = parse_url($url, PHP_URL_HOST);
+	$path = parse_url($url, PHP_URL_PATH);
+
 	$website = str_replace('www.', '', $website);
+	if (stristr($website, 'instagram') || stristr($website, 'twitter') || stristr($website, 'facebook')) {
+		$website .= $path;
+	}
+
+	$website = rtrim($website, '/');
+
 	return $website;
 }
