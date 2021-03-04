@@ -51,6 +51,17 @@ if (is_singular()) {
 	<meta property="og:title" content="Open Studio" />
 	<meta property="og:description" content="Open Studio " />
 	<meta property="og:image" content="<?php bloginfo('template_directory');?>/GSA-card.jpg" />
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNPQBDWJQ5"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-YNPQBDWJQ5');
+	</script>
+
 </head>
 
 <body class="<?php echo implode(' ', $classes); ?>">
