@@ -18,7 +18,7 @@
 				
 				
 				<?php if($args['page']):?>
-					
+
 					<?php if ($work['media_image']['width'] > $work['media_image']['height']) :?>
 						<img src="<?php echo $work['media_image']['sizes'][$image_size]; ?>" />
 					<?php else: ?>
@@ -48,7 +48,7 @@
 		<?php elseif ($work['media_type'] == 'embed'): ?>
 			<div class="work embed">
 
-				<div>
+				<div class="oembed">
 					<?php echo $work['media_embed']; ?>
 				</div>
 				<div class="caption">

@@ -262,14 +262,14 @@ article.intro {
 		
 }
 
-.embed {
+.oembed {
 	position: relative; 
 	padding-bottom: 56.25%;
 	height: 0; 
 	overflow: hidden;
 	width: 100%;
 }
-.embed iframe, .embed object, .embed embed, .embed video {
+.oembed iframe, .oembed object, .oembed embed, .oembed video {
 	position: absolute; 
 	top: 0;
 	left: 0;

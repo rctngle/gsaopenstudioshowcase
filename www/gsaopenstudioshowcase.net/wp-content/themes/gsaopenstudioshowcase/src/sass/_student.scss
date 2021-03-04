@@ -96,7 +96,10 @@ article {
 			}
 			width: 100%;
 			position: relative;
-			margin-bottom: 3rem;
+			margin-bottom: 2rem;
+			@include breakpoint(xsm){
+				margin-bottom: 3rem;				
+			}
 			img {
 				border: 1px solid #ddd;
 				width: 100%;
