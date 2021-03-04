@@ -2,6 +2,26 @@
 
 $classes = get_body_class();
 
+$student_num = 0;
+$num_students = 0;
+if (is_singular()) {
+	$current_student_id = get_the_ID();
+	$index_query = new WP_Query([
+		'post_type' => 'post',
+		'posts_per_page' => -1,
+		'orderby' => 'title',
+		'order' => 'asc',
+	]);
+
+	$num_students = count($index_query->posts);
+
+	foreach($index_query->posts as $count => $p) {
+		if ($current_student_id == $p->ID) {
+			$student_num = $count+1;
+		}
+	}
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -70,5 +90,6 @@ $classes = get_body_class();
 		<?php previous_post_link('%link', '&larr; Previous'); ?>
 
 		<?php next_post_link('%link', 'Next &rarr;'); ?>
+		<?php echo $student_num; ?> / <?php echo $num_students; ?>
 	</nav>
 </section>
