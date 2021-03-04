@@ -67,7 +67,7 @@ $classes = get_body_class();
 		<p class="essay"><a href=""><span>Continue Reading</span> &rarr;</a></p>
 	</article>
 	<nav>
-		<?php previous_post_link('%link', 'Previous'); ?>
-		<?php next_post_link('%link', 'Next'); ?>
+		<?php previous_post_link('%link', '&larr; Previous'); ?>
+		<?php next_post_link('%link', 'Next &rarr;'); ?>
 	</nav>
 </section>
