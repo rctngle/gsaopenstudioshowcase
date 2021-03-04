@@ -43,13 +43,13 @@ if (is_singular()) {
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@GSofA">
 	<meta name="twitter:creator" content="@GSofA">
-	<meta name="twitter:title" content="Phd Showcase">
-	<meta name="twitter:description" content="Phd Showcase launches as a digital platform where our students, their families and friends, staff and the GSA’s global creative network of 22,000 alumni, partners, employers and industry as well as the wider public can come together online to begin to look, listen, watch, read, review, engage, follow and connect with our graduating students’ individual Showcases of work, some still in process, some completed, along with critical and community reviews and live events, performances and happenings.">
+	<meta name="twitter:title" content="Open Studio">
+	<meta name="twitter:description" content="Open Studio ">
 	<meta name="twitter:image" content="<?php bloginfo('template_directory');?>/GSA-card.jpg">
 
-	<meta property="og:url" content="https://gsaphdshowcase.net" />
-	<meta property="og:title" content="Phd Showcase" />
-	<meta property="og:description" content="Phd Showcase launches as a digital platform where our students, their families and friends, staff and the GSA’s global creative network of 22,000 alumni, partners, employers and industry as well as the wider public can come together online to begin to look, listen, watch, read, review, engage, follow and connect with our graduating students’ individual Showcases of work, some still in process, some completed, along with critical and community reviews and live events, performances and happenings." />
+	<meta property="og:url" content="https://gsaopenstudioshowcase.net/" />
+	<meta property="og:title" content="Open Studio" />
+	<meta property="og:description" content="Open Studio " />
 	<meta property="og:image" content="<?php bloginfo('template_directory');?>/GSA-card.jpg" />
 </head>
 
