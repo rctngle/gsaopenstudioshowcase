@@ -47,12 +47,7 @@ article {
 	margin: 0 auto;
 	flex-flow: column nowrap;
 	padding: var(--padding);
-	a:link {
-
-
-	}
-	@include breakpoint(xsm){
-	}
+	
 	@include breakpoint(sm){
 		justify-content: space-between;
 		flex-flow: row nowrap;
@@ -65,7 +60,7 @@ article {
 	}
 
 	.works {
-
+		background-color: #FFF;
 		flex: 0 1 calc(75% - 15px);
 		position: relative;
 		margin-bottom: 1rem;
@@ -101,6 +96,7 @@ article {
 		align-self: flex-start;
 		top: var(--padding);
 		flex: 0 1 calc(25% - 15px);
+		padding-left: var(--padding);
 		@include breakpoint(sm){
 
 		}
