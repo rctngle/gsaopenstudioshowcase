@@ -50,7 +50,7 @@ function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
 
 function gsa_pre_get_posts( $query ) {
 	if( $query->is_main_query() && ! is_admin() ) {
-		$query->set( 'posts_per_page', 2 );
+		$query->set( 'posts_per_page', -1 );
 		$query->set( 'orderby', 'title' );
 		$query->set( 'order', 'asc' );
 	}
