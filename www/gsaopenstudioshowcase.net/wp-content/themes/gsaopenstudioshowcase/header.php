@@ -51,6 +51,17 @@ if (is_singular()) {
 	<meta property="og:title" content="Phd Showcase" />
 	<meta property="og:description" content="Phd Showcase launches as a digital platform where our students, their families and friends, staff and the GSA’s global creative network of 22,000 alumni, partners, employers and industry as well as the wider public can come together online to begin to look, listen, watch, read, review, engage, follow and connect with our graduating students’ individual Showcases of work, some still in process, some completed, along with critical and community reviews and live events, performances and happenings." />
 	<meta property="og:image" content="<?php bloginfo('template_directory');?>/GSA-card.jpg" />
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNPQBDWJQ5"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-YNPQBDWJQ5');
+	</script>
+
 </head>
 
 <body class="<?php echo implode(' ', $classes); ?>">
