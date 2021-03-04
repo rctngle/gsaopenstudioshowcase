@@ -25,6 +25,10 @@ window.addEventListener('DOMContentLoaded', e=>{
 	if(document.body.classList.contains('home')){
 		createSlideshows();
 	}
+	document.querySelector('.continue-reading').addEventListener('click', e=>{
+		e.preventDefault();
+		document.querySelector('article.intro').classList.add('open');
+	});
 });
 
 
@@ -45,14 +49,4 @@ function createSlideshows() {
 			}, 4000);
 		}, Math.random() * 600 + 300);
 	});
-	// setInterval(() => {
-	// 	document.querySelectorAll('.works').forEach(studentWorks => {
-	// 		let idx = parseInt(studentWorks.dataset.idx) + 1;
-	// 		if (idx >= parseInt(studentWorks.dataset.numworks)) {
-	// 			idx = 0;
-	// 		}
-	// 		studentWorks.dataset.idx = idx;
-			
-	// 	});
-	// }, 3000);
 }

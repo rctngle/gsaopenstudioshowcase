@@ -14,10 +14,8 @@ $breakpoints: (
 		}
 	}
 }
-html, body {
-  height: 100%;
-  margin: 0;
-}
+
+
 html {
 	min-height: 100%;
 	box-sizing: border-box;
@@ -54,10 +52,8 @@ $mobile-nav-height: 54px;
 $border-width: 2px;
 $bg-color: #e2e2e2;
 
-@import "header-nav";
 @import "student";
-@import "intro";
-
+//@import "header-nav";
 body.home {
 	nav a,
 	nav span {
@@ -169,7 +165,33 @@ article.intro {
 	// background: #222;
 	// color: #FFF;
 
-	
+	.extra {
+		display: none;
+		&.sign-off {
+			margin: 2rem 0 0 0;
+			img {
+				width: 110px;
+				margin-right: 20px;
+				@include breakpoint(xsm){
+					width: 150px;
+					margin-right: 30px;	
+				}
+				
+			}
+
+		}
+	}
+	&.open {
+		.essay {
+			display: none;
+		}
+		.extra {
+			display: block;
+		}
+		.extra.sign-off {
+			display: flex;
+		}
+	}
 	
 	h2 {
 
