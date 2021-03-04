@@ -72,12 +72,35 @@ article {
 			background: #f2f2f2;
 		}
 		.work {
+			.image-container {
+				height: 70vw;
+				@include breakpoint(xsm){
+					height: 60vw;	
+				}
+				
+				position: relative;
+				overflow: hidden;
+
+				div {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: contain;
+					}
+				}
+			}
 			width: 100%;
 			position: relative;
 			margin-bottom: 3rem;
 			img {
 				border: 1px solid #ddd;
 				width: 100%;
+				height: auto;
 				display: block;
 			}
 			.caption {

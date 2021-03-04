@@ -14,7 +14,10 @@ $breakpoints: (
 		}
 	}
 }
-
+html, body {
+  height: 100%;
+  margin: 0;
+}
 html {
 	min-height: 100%;
 	box-sizing: border-box;
@@ -237,14 +240,14 @@ article.intro {
 		
 }
 
-.oembed-container {
+.embed {
 	position: relative; 
 	padding-bottom: 56.25%;
 	height: 0; 
 	overflow: hidden;
 	width: 100%;
 }
-.oembed-container iframe, .oembed-container object, .oembed-container embed, .oembed-container video {
+.embed iframe, .embed object, .embed embed, .embed video {
 	position: absolute; 
 	top: 0;
 	left: 0;

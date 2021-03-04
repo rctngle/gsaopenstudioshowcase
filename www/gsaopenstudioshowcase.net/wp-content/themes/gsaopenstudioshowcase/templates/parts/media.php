@@ -13,8 +13,14 @@
 		<?php if ($work['media_type'] == 'image'): ?>
 			<div class="work image">
 
+			
+				<?php if ($work['media_image']['width'] > $work['media_image']['height']) :?>
+					<img src="<?php echo $work['media_image']['sizes'][$image_size]; ?>" />
+				<?php else: ?>
+					<div class="image-container"><div><img src="<?php echo $work['media_image']['sizes'][$image_size]; ?>" /></div></div>
+				<?php endif;?>
 				
-				<img src="<?php echo $work['media_image']['sizes'][$image_size]; ?>" />
+
 					
 				<div class="caption">
 					<?php if($args['page']):?>
