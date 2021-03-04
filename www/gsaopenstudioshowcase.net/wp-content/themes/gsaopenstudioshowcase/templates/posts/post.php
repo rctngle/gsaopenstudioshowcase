@@ -20,7 +20,10 @@ $works = get_field('work');
 			<h2><?php the_field('title'); ?></h2>
 			<div class="about">
 				<em><?php the_content(); ?></em>
-				<p>Contact Information</p>
+				<?php if($email || $email_gsa || $website || $links):?>
+					<p>Contact Information</p>
+				<?php endif;?>
+
 				<div>
 					<?php if ($email): ?>						
 						<a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a><br/>

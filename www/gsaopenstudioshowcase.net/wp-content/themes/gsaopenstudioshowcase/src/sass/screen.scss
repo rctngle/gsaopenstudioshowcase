@@ -3,7 +3,7 @@
 $breakpoints: (
 	'xsm': 767px,
 	'sm': 1024px,
-	'md': 1280px,
+	'md': 1200px,
 	'lg': 1440px
 ) !default;
 
@@ -56,10 +56,14 @@ $bg-color: #e2e2e2;
 @import "intro";
 
 body.home {
-	nav {
+	nav a {
 		display: none;
 	}
+
 }
+
+
+
 body {
 	height: 100%;
 	font-family: 'General-Grotesque-Web', sans-serif;
@@ -115,26 +119,53 @@ section {
 section#intro {
 	display: block;
 	width: 100%;
-	@include breakpoint(sm){
+	padding: var(--padding);
+	@include breakpoint(xsm){
 		display: flex;
 	}
+	article {
+		flex: 0 1 calc(66.6% - 15px);
+		@include breakpoint(sm){
+			flex: 0 1 calc(50% - 15px);
+		}
+
+		@include breakpoint(md){
+			padding: calc(var(--padding) * 0.9) var(--padding) var(--padding) var(--padding);		
+		}
+	}
+
+	nav {
+	
+		padding: 30px 0 5px 0;
+		@include breakpoint(xsm){
+			padding: 0;
+		}
+		@include breakpoint(md){
+			padding: var(--padding);			
+		}
+	
+	}
+
 
 }
+
 
 article.intro {
 	// background: #222;
 	// color: #FFF;
 
-	padding: calc(var(--padding) * 0.9) var(--padding) 0 var(--padding);
+	
+	
 	h2 {
 
 		line-height: 0.95;
 
 		font-size: 36px;
 		margin-bottom: 1rem;
-		@include breakpoint(sm){
+		@include breakpoint(xsm){
 			font-size: 42px;
 		}
+		
 		@include breakpoint(md){
 			font-size: 44px;
 		}
@@ -150,6 +181,9 @@ article.intro {
 		img {
 			width: 120px;
 			@include breakpoint(xsm){
+
+			}
+			@include breakpoint(md){
 				min-width: 170px;			
 			}			
 		}
@@ -173,7 +207,7 @@ article.intro {
 		}
 		br {
 			display: none;
-			@include breakpoint(md){
+			@include breakpoint(lg){
 				display: block;
 			}
 		}
@@ -188,6 +222,7 @@ article.intro {
 	a span {
 		text-decoration: underline;
 	}
+		
 }
 
 .oembed-container {
