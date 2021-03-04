@@ -10,7 +10,7 @@ $i = ceil(rand(1, 3));
 
 <article>
 	<div class="works">
-		<?php get_template_part('templates/parts/media', null, ['works' => $works, "page" => false]); ?>		
+		<?php get_template_part('templates/parts/media', null, ['works' => $works, "page" => false, "permalink"=>get_the_permalink()]); ?>		
 	</div>
 	<div class="info">
 		

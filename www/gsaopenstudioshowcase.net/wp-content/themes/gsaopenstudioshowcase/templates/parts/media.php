@@ -14,14 +14,21 @@
 			<div class="work image">
 
 			
-				<?php if ($work['media_image']['width'] > $work['media_image']['height']) :?>
-					<img src="<?php echo $work['media_image']['sizes'][$image_size]; ?>" />
-				<?php else: ?>
-					<div class="image-container"><div><img src="<?php echo $work['media_image']['sizes'][$image_size]; ?>" /></div></div>
-				<?php endif;?>
 				
-
+				
+				
+				<?php if($args['page']):?>
 					
+					<?php if ($work['media_image']['width'] > $work['media_image']['height']) :?>
+						<img src="<?php echo $work['media_image']['sizes'][$image_size]; ?>" />
+					<?php else: ?>
+						<div class="image-container"><div><img src="<?php echo $work['media_image']['sizes'][$image_size]; ?>" /></div></div>
+					<?php endif;?>
+
+				<?php else:?>
+					<a href="<?php echo $args['permalink'];?>"><img src="<?php echo $work['media_image']['sizes'][$image_size]; ?>" /></a>
+				<?php endif;?>
+
 				<div class="caption">
 					<?php if($args['page']):?>
 						<?php if ($work['media_image']['title']): ?>
