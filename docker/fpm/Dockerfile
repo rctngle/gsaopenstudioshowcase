@@ -1,4 +1,4 @@
-FROM php:7.3-fpm
+FROM php:8.1-fpm
 
 # Install dependencies
 RUN apt-get update \
@@ -18,7 +18,6 @@ RUN apt-get update \
 RUN docker-php-ext-install \
   gd \
   intl \
-  mbstring \
   mysqli \
   pdo_mysql \
   xsl \
@@ -26,6 +25,11 @@ RUN docker-php-ext-install \
   soap \
   opcache \
   dom
+
+RUN apt-get update && apt-get install -y \
+  libmagickwand-dev --no-install-recommends
+
+RUN pecl install imagick && docker-php-ext-enable imagick
 
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

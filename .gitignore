@@ -4,8 +4,9 @@ build/
 vendor/
 
 /www/gsaopenstudioshowcase.net/*
+!/www/gsaopenstudioshowcase.net/wp-config.php
 !/www/gsaopenstudioshowcase.net/wp-content/
 /www/gsaopenstudioshowcase.net/wp-content/*
-!/www/gsaopenstudioshowcase.net/wp-content/themes
+!/www/gsaopenstudioshowcase.net/wp-content/themes/
 /www/gsaopenstudioshowcase.net/wp-content/themes/*
 !/www/gsaopenstudioshowcase.net/wp-content/themes/gsaopenstudioshowcase

@@ -1,31 +1,10 @@
 # docker-compose -p gsaopenstudioshowcase up
 
-version: "3.2"
+version: "3.3"
 services:
-  fpm:
-    build:
-      context: ./fpm
-    env_file:
-      - ./fpm/vars.env
-    volumes:
-      - ../www/:/usr/local/apache2/htdocs/    
-      - ./fpm/conf/custom.ini:/usr/local/etc/php/conf.d/custom.ini
-      - ./nginx-conf:/etc/nginx/conf.d
-  apache:
-    build:
-      context: './apache/'
-    depends_on:
-      - fpm
-      - db
-    ports:
-      - "80:80"
-    volumes:
-      - ../www/:/usr/local/apache2/htdocs/
-      - ./apache/conf/httpd.conf:/usr/local/apache2/conf/httpd.conf
-      - ./apache/conf/extra/httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
 
   db:
-    image: mariadb:10.5.3
+    image: mariadb
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: gsaopenstudioshowcase
@@ -39,8 +18,29 @@ services:
     volumes:
       - gsaopenstudioshowcase_db_data:/var/lib/mysql
       - ./database:/docker-entrypoint-initdb.d
-      - ./mariadb/conf:/etc/mysql/mariadb.conf.d
+      - ./mariadb-conf:/etc/mysql/mariadb.conf.d
+  
+  nginx:
+    depends_on:
+      - db
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ../www:/var/www/html
+      - ./nginx-conf:/etc/nginx/conf.d
 
+  fpm:
+    build:
+      context: ./fpm
+    env_file:
+      - ./fpm/vars.env
+    volumes:
+      - ../www:/var/www/html
+      - ./fpm-conf/custom.ini:/usr/local/etc/php/conf.d/custom.ini
 
 volumes:
     gsaopenstudioshowcase_db_data:
+    gsaopenstudioshowcase_db_data_2020:
+    gsaopenstudioshowcase_db_data_2021:
