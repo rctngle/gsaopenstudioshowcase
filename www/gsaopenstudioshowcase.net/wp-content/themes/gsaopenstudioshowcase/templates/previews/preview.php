@@ -2,15 +2,27 @@
 
 $post_classes = get_post_class();
 $post_classes[]= 'preview';
-$works = get_field('work');
+$work_entries = get_field('work', false, false);
 
-$i = ceil(rand(1, 3));
+$image_urls = [];
+foreach($work_entries as $work) {
+	if ($work['field_5e830ce20cad9'] == 'image') {
+		$image = wp_get_attachment_image_src($work['field_5e830ce20cada'], 'large');
+		if (count($image_urls) < 3) {
+			$image_urls[] = $image[0];
+		}
+	}
+}
 
 ?>
 
 <article>
 	<div class="works">
-		<?php get_template_part('templates/parts/media', null, ['works' => $works, "page" => false, "permalink"=>get_the_permalink()]); ?>		
+		<?php foreach($image_urls as $image_url): ?>
+			<div class="work image">
+				<a href="<?php the_permalink(); ?>"><img src="<?php echo $image_url; ?>" /></a>
+			</div>
+		<?php endforeach; ?>
 	</div>
 	<div class="info">
 		

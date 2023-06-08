@@ -7,7 +7,6 @@ $email = get_field('email');
 $email_gsa = get_field('email_gsa');
 $website = get_field('website');
 $links = get_field('links');
-$works = get_field('work');
 
 ?>
 
@@ -47,6 +46,6 @@ $works = get_field('work');
 		</div>
 	</div>
 	<div class="works">
-		<?php get_template_part('templates/parts/media', null, ['works' => $works, "page" => true]); ?>
+		<?php get_template_part('templates/parts/media'); ?>
 	</div>
 </article>

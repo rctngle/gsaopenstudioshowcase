@@ -1,4 +1,4 @@
-FROM php:8.1-fpm
+FROM php:7.3-fpm
 
 # Install dependencies
 RUN apt-get update \
@@ -18,6 +18,7 @@ RUN apt-get update \
 RUN docker-php-ext-install \
   gd \
   intl \
+  mbstring \
   mysqli \
   pdo_mysql \
   xsl \

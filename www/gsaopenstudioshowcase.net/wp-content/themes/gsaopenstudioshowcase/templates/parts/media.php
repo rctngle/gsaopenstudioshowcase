@@ -1,21 +1,19 @@
-<?php $works = $args['works'];?>
 <?php 
+
+$works = get_field('work');
+
+$image_size = 'large';
+$limit = 3;
+if($args['page']){
 	$image_size = 'large';
-	$limit = 3;
-	if($args['page']){
-		$image_size = 'large';
-		$limit = 100;
-	}
+	$limit = 100;
+}
 
 ?>
 <?php foreach($works as $widx=>$work): ?>
 	<?php if($widx < $limit):?>
 		<?php if ($work['media_type'] == 'image'): ?>
 			<div class="work image">
-
-			
-				
-				
 				
 				<?php if($args['page']):?>
 

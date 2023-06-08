@@ -40,6 +40,12 @@ define( 'DB_COLLATE', '' );
 define( 'WP_HOME', 'http://gsaopenstudioshowcase.localhost' );
 define( 'WP_SITEURL', 'http://gsaopenstudioshowcase.localhost' );
 
+define( 'AS3CF_SETTINGS', serialize( [
+    'provider' => 'aws',
+    'access-key-id' => 'AKIAZP45VHIEEHTKZ7GP',
+    'secret-access-key' => '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',
+] ) );
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
